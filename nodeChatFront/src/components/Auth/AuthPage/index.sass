@@ -1,0 +1,49 @@
+@mixin gradient($direction, $list) 
+  background: -webkit-linear-gradient($direction, $list)
+  background: -moz-linear-gradient($direction, $list)
+  background: -o-linear-gradient($direction, $list)
+  background: linear-gradient($direction, $list)
+
+$backgroundGradientColors: rgba(98,214,225,1) 0%, rgba(89,168,225,1) 25%, rgba(108,130,229,1) 50%, rgba(168,74,238,1) 75%, rgba(232,57,246,1) 100%
+
+
+.wrapper
+  height: 100dvh
+  overflow: hidden
+  @include gradient(45deg, $backgroundGradientColors)
+  position: relative
+  &::after
+    content: ''
+    width: 300px
+    height: 600px
+    left: 95%
+    top: 20%
+    transform: rotate(-25deg)
+    border-radius: 9px
+    background-color: #B435DA
+    position: absolute
+    box-shadow: 0px 0px 213px 42px rgba(159,47,193,1)
+  &::before
+    content: ''
+    width: 300px
+    height: 600px
+    right: 96%
+    bottom: 50%
+    transform: rotate(-35deg)
+    border-radius: 9px
+    background-color:#6CA6E4
+    position: absolute
+    box-shadow: 0px 0px 213px 42px #5992cf
+  main
+    width: 450px
+    height: 700px
+    background-color: #fff
+    place-self: center
+    border-radius: 16px
+    .form
+      height: 200px
+      width: 100%
+
+.linkText
+  cursor: pointer
+  font-size: 15px
